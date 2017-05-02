@@ -86,113 +86,56 @@
         </ul>
     </div>
 </nav>
+<style>
+    ul.real_list li {
+        list-style-type: disc;
+    }
+</style>
+
 <div class="container">
-  <div class="row">
-    <div class="col s12 m12">
-      <h1 class="header center blue-text">Participants</h1>
+    <div class="row">
+        <div class="col s12 m12">
+            <h1 class="header center orange-text">Want to become a Sponsor?</h1>
+            <h3 class="header center light">Expose your company to a selected group of JavaScript Technology
+                Enthusiasts</h3>
+        </div>
     </div>
-
-    <div class="col s12 m6">
-      <h5 class="header center" id="sum_saturday">
-    </div>
-    <div class="col s12 m6">
-      <h5 class="header center" id="sum_sunday">
-    </div>
-  </div>
-
-  <div id="participants" class="row">
-  </div>
 </div>
 
-
-<script id="participant-template" type="text/x-handlebars-template">
-  <div class="col s12 m6 l3">
-    <div class="card medium">
-      <div class="card-image">
-        {{#if urls.photo}}
-           <img class="activator" src="{{urls.photo}}">
-        {{else}}
-           <img class="activator" src="/img/nophoto.png">
-        {{/if}}
-      </div>
-      <div class="card-content">
-        <span class="card-title activator">{{name}}<i class="material-icons right">more_vert</i></span>
-        {{#if company}}
-           <p>{{company}}</p>
-        {{/if}}
-      </div>
-      <div class="card-reveal">
-        <span class="card-title activator">{{name}}<i class="material-icons right">close</i></span>
-        {{#if what_is_my_connection_to_javascript}}
-        <p>{{what_is_my_connection_to_javascript}}</p>
-        {{/if}}
-        {{#if what_can_i_contribute}}
-        <p>{{what_can_i_contribute}}</p>
-        {{/if}}
-      </div>
-      <div class="card-action">
-        {{#if urls.homepage}}
-        <a class="blue-text" href="{{urls.homepage}}"><i class="fa fa-home fa-fw"/></a>
-        {{/if}}
-        {{#if urls.github}}
-        <a class="blue-text" href="{{urls.github}}"><i class="fa fa-github fa-fw"/></a>
-        {{/if}}
-        {{#if urls.twitter}}
-        <a class="blue-text" href="{{urls.twitter}}"><i class="fa fa-twitter fa-fw"/></a>
-        {{/if}}
-        <div class="card-tags-container">
-          {{#list tags}}
-             <span class="card-tag">#{{ this }}</span>
-          {{/list}}
+<div class="container">
+    <div class="row flow-text">
+        <div class="col s12 m6">
+            <h5 class="header center">You will get ...</h5>
+            <ul class="real_list">
+                <li>Get up to <b>5 preregistered participant spots</b> for your representatives</li>
+                <li>We place your <b>logo</b> and <b>link</b> on the JSCraftCamp website</li>
+                <li>Your <b>exhibitor</b> will be visible for the whole time during the event</li>
+                <li>Your <b>company name</b> will be mentioned several times during the conference</li>
+                <li>It's an OpenSpace &mdash; contribute the <b>talks that are important to you</b> to the community
+                </li>
+                <li>Sponsors will be announced via the official JSCC <b>Twitter</b> account</li>
+            </ul>
         </div>
-      </div>
+        <div class="col s12 m6">
+            <h5 class="header center">Why Sponsor?</h5>
+            <p class="block">
+                The JSCraftCamp is an Open Space conference that attracts diverse people from the JavaScript community
+                who really care about their craft. The crowd is self selected by investing time for their own application
+                (pull request).
+                Besides developers, you will find all kind of people with different job roles that really care about
+                technology and improvement.
+                You will get the chance to present your brand to these 100 to 120 highly skilled individuals and show
+                them how much you care!
+                We'll all thank you for that!</p>
+        </div>
     </div>
-  </div>
-</script>
 
-<script type="text/javascript" src="./js/tshirt-sizes.js"></script>
-<script type="text/javascript">
+</div>
 
-window.onload = function() {
-  $.getJSON("/participants2016.json", function(data) {
-    var items = [];
-    var sum = 0;
-    var sum_saturday = 0;
-    var sum_sunday = 0;
-    $.each(data, function(index, participant) {
-      var source = $("#participant-template").html();
-      var template = Handlebars.compile(source);
-      var card = template(participant);
-      items.push(card);
-      sum++;
-      if(participant.when.saturday) sum_saturday++;
-      if(participant.when.sunday) sum_sunday++;
-    });
-    $("#participants").append(items.join(""));
-    $("#sum").append(sum+" participants");
-    $("#sum_saturday").append(sum_saturday+" participants on Saturday (max. 110)");
-    $("#sum_sunday").append(sum_sunday+" participants on Sunday (max. 110)");
-
-    function tshirtData(participant) { return participant.tshirt; }
-    function notEmpty(tshirt) { return !!tshirt; }
-    var tShirtSizesStructuredInfo = JSON.stringify(sortShirtSizes(data.map(tshirtData).filter(notEmpty)), null, 4);
-    console.log("T-Shirt sizes:", tShirtSizesStructuredInfo);
-
-    if (window.location.hash === '#list-tshirt-sizes') {
-      alert(tShirtSizesStructuredInfo);
-    }
-  });
-
-Handlebars.registerHelper('list', function(context, options) {
-  var ret = "";
-  for(var i=0, j=context.length; i<j; i++) {
-    ret = ret + options.fn(context[i]);
-  }
-  return ret;
-});
-};
-
-</script>
+<div class="row">
+    <h3 class="header center light">Show how much you care about improving the state of Craftmanship and Clean Code in
+        the JS-Community!</h3>
+</div>
 <footer>
   <div>
     <h3 class="orange-text">Sitemap</h3>
