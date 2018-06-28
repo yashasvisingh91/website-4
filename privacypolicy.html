@@ -1,7 +1,6 @@
-<html xmlns:fb="http://ogp.me/ns/fb">
+<html>
 <head>
   <title>JSCraftCamp - 10+11 August 2018 in Munich</title>
-  <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="css/prism-customized.css"/>
   <link type="text/css" rel="stylesheet" href="css/main.css" media="screen,projection"/>
@@ -11,8 +10,31 @@
         content="https://raw.githubusercontent.com/jscraftcamp/website/master/src/img/logo.png"/>
 
   <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+  <style>
+  @font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(fonts/material-design-icons/materialicons38.woff2) format('woff2');
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+  </style>
 </head>
 <body>
 <nav class="colorOfTheYear">
@@ -73,112 +95,49 @@
   </div>
 </nav>
 <div class="container">
-  <div class="row">
-    <div class="col s12 m12">
-      <h1 class="header center blue-text">Participants</h1>
-    </div>
+<div class="row">
+<div class="col s12 m12">
+<style>
+  ul li {
+    list-style-type: disc;
+    list-style-position: inside;
+  };
+</style>
 
-    <div class="col s12 m6">
-      <h5 class="header center" id="sum_saturday">
-    </div>
-    <div class="col s12 m6">
-      <h5 class="header center" id="sum_sunday">
-    </div>
-  </div>
+<h1>Privacy Policy</h1>
 
-  <div id="participants" class="row">
-  </div>
+<p>At JSCraftCamp.org one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by JSCraftCamp.org and how we use it.</p>
+
+<p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us through email at team@jscraftcamp.org</p>
+
+<p>JSCraftCamp itself collects no data at all! We don't use any trackers or advertisement. However, being hosted at Github.com, when you visit JSCraftCamp.org Github Inc. [US] collects log files and uses cookies. You can learn more about it here: <a href="https://help.github.com/articles/github-privacy-statement">GitHub Privacy Statement</a></p>
+
+<p>Note that JSCraftCamp.org has no access to or control over these cookies and log files that are used by Github.</p>
+
+<p>You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.</p>
+
+<h2>Registration for the Event</h2>
+
+<p>If you like to register for the JSCraftCamp conference event, you need to supply some information by creating a pull request to this website at github.org. The information you can supply is explained on the <a href="/registration.html">registration page</a>. The supplied data includes:</p>
+
+<ul>
+  <li>name, first name, company name</li>
+  <li>days of participation</li>
+  <li>T-shirt-size (optional)</li>
+  <li>Dietary requirements (optional)</li>
+</ul>
+
+<p>All this information will be publicly visible on Github and is subject to the <a href="https://help.github.com/articles/github-privacy-statement">GitHub Privacy Statement</a>.
+
+</p><p>Our team members will look up this information during and prior to the event, to handle the event organization.</p>
+
+<h2>Consent</h2>
+<p>By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions as well as to the <a href="https://help.github.com/articles/github-privacy-statement">GitHub Privacy Statement</a> and to its Terms and Conditions.</p>
+
+
 </div>
-
-
-<script id="participant-template" type="text/x-handlebars-template">
-  <div class="col s12 m6 l3">
-    <div class="card medium">
-      <div class="card-image">
-        {{#if urls.photo}}
-           <img class="activator" src="{{urls.photo}}">
-        {{else}}
-           <img class="activator" src="/img/nophoto.png">
-        {{/if}}
-      </div>
-      <div class="card-content">
-        <span class="card-title activator">{{name}}<i class="material-icons right">more_vert</i></span>
-        {{#if company}}
-           <p>{{company}}</p>
-        {{/if}}
-      </div>
-      <div class="card-reveal">
-        <span class="card-title activator">{{name}}<i class="material-icons right">close</i></span>
-        {{#if what_is_my_connection_to_javascript}}
-        <p>{{what_is_my_connection_to_javascript}}</p>
-        {{/if}}
-        {{#if what_can_i_contribute}}
-        <p>{{what_can_i_contribute}}</p>
-        {{/if}}
-      </div>
-      <div class="card-action">
-        {{#if urls.homepage}}
-        <a class="blue-text" href="{{urls.homepage}}"><i class="fa fa-home fa-fw"/></a>
-        {{/if}}
-        {{#if urls.github}}
-        <a class="blue-text" href="{{urls.github}}"><i class="fa fa-github fa-fw"/></a>
-        {{/if}}
-        {{#if urls.twitter}}
-        <a class="blue-text" href="{{urls.twitter}}"><i class="fa fa-twitter fa-fw"/></a>
-        {{/if}}
-        <div class="card-tags-container">
-          {{#list tags}}
-             <span class="card-tag">#{{ this }}</span>
-          {{/list}}
-        </div>
-      </div>
-    </div>
-  </div>
-</script>
-
-<script type="text/javascript" src="./js/tshirt-sizes.js"></script>
-<script type="text/javascript">
-
-window.onload = function() {
-  $.getJSON("/participants2016.json", function(data) {
-    var items = [];
-    var sum = 0;
-    var sum_saturday = 0;
-    var sum_sunday = 0;
-    $.each(data, function(index, participant) {
-      var source = $("#participant-template").html();
-      var template = Handlebars.compile(source);
-      var card = template(participant);
-      items.push(card);
-      sum++;
-      if(participant.when.saturday) sum_saturday++;
-      if(participant.when.sunday) sum_sunday++;
-    });
-    $("#participants").append(items.join(""));
-    $("#sum").append(sum+" participants");
-    $("#sum_saturday").append(sum_saturday+" participants on Saturday (max. 110)");
-    $("#sum_sunday").append(sum_sunday+" participants on Sunday (max. 110)");
-
-    function tshirtData(participant) { return participant.tshirt; }
-    function notEmpty(tshirt) { return !!tshirt; }
-    var tShirtSizesStructuredInfo = JSON.stringify(sortShirtSizes(data.map(tshirtData).filter(notEmpty)), null, 4);
-    console.log("T-Shirt sizes:", tShirtSizesStructuredInfo);
-
-    if (window.location.hash === '#list-tshirt-sizes') {
-      alert(tShirtSizesStructuredInfo);
-    }
-  });
-
-Handlebars.registerHelper('list', function(context, options) {
-  var ret = "";
-  for(var i=0, j=context.length; i<j; i++) {
-    ret = ret + options.fn(context[i]);
-  }
-  return ret;
-});
-};
-
-</script>
+</div>
+</div>
 <footer>
   <div>
     <h3 class="colorOfTheYear-text">Sitemap</h3>
@@ -210,6 +169,7 @@ Handlebars.registerHelper('list', function(context, options) {
       <li><a class="colorOfTheYear-text" href="/theteam.html">The Team</a></li>
       <li><a class="colorOfTheYear-text" href="https://twitter.com/jscraftcamp">Twitter</a></li>
       <li><a class="colorOfTheYear-text" href="/imprint.html">Imprint</a></li>
+      <li><a class="colorOfTheYear-text" href="/privacypolicy.html">Privacy Policy</a></li>
     </ul>
   </div>
   <div style="flex: 1.5">
@@ -223,13 +183,7 @@ Handlebars.registerHelper('list', function(context, options) {
           <li><a class="colorOfTheYear-text" href="/photos2017">2017 - Photos</a></li>
       
           
-          <li><a class="colorOfTheYear-text" href="/participants2017">2017 - Participants</a></li>
-      
-          
           <li><a class="colorOfTheYear-text" href="/info2016">2016 - Home</a></li>
-      
-          
-          <li><a class="colorOfTheYear-text" href="/participants2016">2016 - Participants</a></li>
       
           
           <li><a class="colorOfTheYear-text" href="/photos2016">2016 - Photos</a></li>
