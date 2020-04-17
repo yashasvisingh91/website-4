@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{"0e4h":function(o,n,t){o.exports={root:"typography-module--root--pStjy",h1:"typography-module--h1--1hQhF"}},"8ypT":function(o,n,t){},AFYY:function(o,n,t){},Krze:function(o,n,t){},ZI9V:function(o,n,t){o.exports={root:"JsccLogo-module--root--3mu3r",img:"JsccLogo-module--img--3zqdm"}},ewTs:function(o,n,t){},rmqn:function(o,n,t){}}]);
-//# sourceMappingURL=styles-6c2daa44c188cab4a20b.js.map
