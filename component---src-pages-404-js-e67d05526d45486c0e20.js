@@ -1,0 +1,2 @@
+(self.webpackChunkjs_craftcamp_website=self.webpackChunkjs_craftcamp_website||[]).push([[883],{9616:function(e,t,n){"use strict";n.r(t);var a=n(7294),s=n(9894),c=n(8228),u=n(8776),l=n(7099);t.default=function(){return a.createElement(s.Z,{title:"404: Not found"},a.createElement(c.Z,null,a.createElement(l.Z,{size:"m"}),a.createElement(u.Z,{component:"h2"},"not found"),a.createElement(u.Z,null,"You just hit a route that doesn't exist... the sadness")))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-e67d05526d45486c0e20.js.map
